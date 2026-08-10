@@ -485,6 +485,7 @@ DownloadSet : TypeAlias = Dict[str, Download]
 
 VideoMemoryStrategy = Literal['strict', 'moderate', 'tolerant']
 ApiSecurityStrategy = Literal['strict', 'moderate']
+ApiMode = Literal['local', 'remote']
 AppContext = Literal['cli', 'api']
 
 InferencePool : TypeAlias = Dict[str, InferenceSession]
@@ -580,6 +581,8 @@ StateKey = Literal\
 	'api_port',
 	'api_key',
 	'api_security_strategy',
+	'api_mode',
+	'api_domain',
 	'job_id',
 	'job_status',
 	'step_index'
@@ -656,6 +659,8 @@ State = TypedDict('State',
 	'api_port' : int,
 	'api_key' : str,
 	'api_security_strategy' : ApiSecurityStrategy,
+	'api_mode' : ApiMode,
+	'api_domain' : str,
 	'job_id' : str,
 	'job_status' : JobStatus,
 	'step_index' : int

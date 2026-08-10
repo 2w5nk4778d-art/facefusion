@@ -161,6 +161,8 @@ LOCALES : Locales =\
 			'api_host': 'specify the API host',
 			'api_port': 'specify the API port',
 			'api_security_strategy': 'specify the API security strategy used for sanitizing uploaded assets',
+			'api_mode': 'serve the API locally or join a swarm as a remote GPU node',
+			'api_domain': 'specify the swarm domain to join when the API mode is remote',
 			'execution_device_ids': 'specify the devices used for processing',
 			'execution_providers': 'inference using different providers (choices: {choices}, ...)',
 			'execution_thread_count': 'specify the amount of parallel threads while processing',

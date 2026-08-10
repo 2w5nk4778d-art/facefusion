@@ -2,7 +2,7 @@ import logging
 from typing import List, Sequence, get_args
 
 from facefusion.common_helper import create_float_range, create_int_range
-from facefusion.types import Angle, ApiSecurityStrategy, AudioEncoder, AudioFormat, AudioSet, BenchmarkMode, BenchmarkResolution, BenchmarkSet, DownloadProvider, DownloadProviderSet, DownloadScope, ExecutionProvider, ExecutionProviderSet, FaceAlignerModel, FaceDetectorModel, FaceDetectorSet, FaceMaskArea, FaceMaskAreaSet, FaceMaskRegion, FaceMaskRegionSet, FaceMaskType, FaceOccluderModel, FaceParserModel, FaceSelectorGender, FaceSelectorMode, FaceSelectorOrder, FaceSelectorRace, Gender, ImageEncoder, ImageFormat, ImageSet, JobStatus, LogLevel, LogLevelSet, Race, Score, TempFrameFormat, TempPixelFormat, VideoEncoder, VideoFormat, VideoMemoryStrategy, VideoPreset, VideoSet, VoiceExtractorModel, WorkflowMode, WorkflowStrategy
+from facefusion.types import Angle, ApiMode, ApiSecurityStrategy, AudioEncoder, AudioFormat, AudioSet, BenchmarkMode, BenchmarkResolution, BenchmarkSet, DownloadProvider, DownloadProviderSet, DownloadScope, ExecutionProvider, ExecutionProviderSet, FaceAlignerModel, FaceDetectorModel, FaceDetectorSet, FaceMaskArea, FaceMaskAreaSet, FaceMaskRegion, FaceMaskRegionSet, FaceMaskType, FaceOccluderModel, FaceParserModel, FaceSelectorGender, FaceSelectorMode, FaceSelectorOrder, FaceSelectorRace, Gender, ImageEncoder, ImageFormat, ImageSet, JobStatus, LogLevel, LogLevelSet, Race, Score, TempFrameFormat, TempPixelFormat, VideoEncoder, VideoFormat, VideoMemoryStrategy, VideoPreset, VideoSet, VoiceExtractorModel, WorkflowMode, WorkflowStrategy
 
 face_detector_set : FaceDetectorSet =\
 {
@@ -141,6 +141,7 @@ download_scopes : List[DownloadScope] = list(get_args(DownloadScope))
 
 video_memory_strategies : List[VideoMemoryStrategy] = list(get_args(VideoMemoryStrategy))
 api_security_strategies : List[ApiSecurityStrategy] = list(get_args(ApiSecurityStrategy))
+api_modes : List[ApiMode] = list(get_args(ApiMode))
 
 log_level_set : LogLevelSet =\
 {

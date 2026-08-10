@@ -941,6 +941,17 @@ def create_api_program() -> ArgumentParser:
 		type = int,
 		default = config.get_int_value('api', 'api_port', '8000')
 	)
+	group_api.add_argument(
+		'--api-mode',
+		help = translator.get('help.api_mode'),
+		default = config.get_str_value('api', 'api_mode', 'local'),
+		choices = facefusion.choices.api_modes
+	)
+	group_api.add_argument(
+		'--api-domain',
+		help = translator.get('help.api_domain'),
+		default = config.get_str_value('api', 'api_domain', 'facefusion.cloud')
+	)
 	capability_store.register_capability_set(
 		[
 			group_api.add_argument(

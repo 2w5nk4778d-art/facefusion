@@ -9,6 +9,7 @@ import uvicorn
 
 import facefusion.apis.core
 from facefusion import args_helper, benchmarker, cli_helper, content_analyser, hash_helper, logger, state_manager, translator
+from facefusion.apis import swarm
 from facefusion.args_helper import apply_args
 from facefusion.download import conditional_download_hashes, conditional_download_sources
 from facefusion.exit_helper import hard_exit, signal_exit
@@ -56,6 +57,9 @@ def route(args : Args) -> None:
 
 	if state_manager.get_item('command') == 'api':
 		if not common_pre_check() or not processors_pre_check() or not facefusion.apis.core.pre_check():
+			hard_exit(2)
+
+		if state_manager.get_item('api_mode') == 'remote' and not swarm.join_swarm():
 			hard_exit(2)
 
 		logger.info(translator.get('api_started').format(host = state_manager.get_item('api_host'), port = state_manager.get_item('api_port')), __name__)
